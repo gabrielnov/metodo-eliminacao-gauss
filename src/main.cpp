@@ -38,6 +38,7 @@ int main(){
 	printMatrix(m, size);
 	solve(m, size);
 	printMatrix(m, size);
+	isolate(m, size);
 
 	for (int i = 0; i < size; i++)
 		delete[] m[i];
@@ -81,14 +82,14 @@ void concatenateMatrix(float **m, float *vetor, int size){
 }
 
 void printMatrix(float **m, int size){
-	std::cout << "\n";
+	std::cout << std::endl;
 	for (int i = 0; i < size; i++){
 		for (int j = 0; j <= size; j++){
 			std::cout << std::setfill(' ') << std::setw(8) << std::fixed <<  std::setprecision(2) << m[i][j] ;
 		}
-		std::cout << "\n";
+		std::cout << std::endl;
 	}
-	std::cout << "\n";
+	std::cout << std::endl;
 		
 }
 
@@ -109,4 +110,32 @@ void updateRow(float **m, int row, float factor, int size, int iteration){
 	}
 }
 
-void isolate(float **m, )
+void isolate(float **m, int size){
+	float *v;
+	v = new float[size];
+
+	for (int i = size-1; i >= 0; i--){
+		for(int j = size-1; j >= 0; j--){
+			
+			if (j == i){
+				v[i] = m[i][size] / m[i][j];
+				break;
+			} else
+				m[i][size] -= m[i][j] * v[j];
+		}	
+	}
+
+	std::cout << std::endl;
+
+	for (int i = 0; i < size; i++){
+		std::cout << std::setfill(' ') << std::setw(4) 
+		<< "x" << i << " = " 
+		<< std::setfill(' ') 
+		<< std::setw(5) << v[i] 
+		<< std::endl;
+	}
+
+	std::cout << std::endl;
+
+	delete[] v;
+}

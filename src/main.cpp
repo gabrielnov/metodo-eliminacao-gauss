@@ -5,16 +5,16 @@
 
 int main(){
 	int size;
-	double **m, *vetor;
+	float **m, *vetor;
 	
 	// size = sizeInput();
 	size = 3;
 
-	m = new double * [size];
+	m = new float * [size];
 	for (int i = 0; i < size; i++)
-		m[i] = new double[size+1];
+		m[i] = new float[size+1];
 	
-	vetor = new double [size];
+	vetor = new float [size];
 
 	// matrixInput(m, size);
 	// vectorInput(vetor, size);
@@ -56,7 +56,7 @@ int sizeInput(){
 	return ordem;
 }
 
-void matrixInput(double **m, int size){
+void matrixInput(float **m, int size){
 	std::cout << "Entrada de valores - matriz" << std::endl;
 	for (int i = 0; i < size; i++)
 		for (int j = 0; j < size; j++){
@@ -65,7 +65,7 @@ void matrixInput(double **m, int size){
 		}
 }
 
-void vectorInput(double *vetor, int size){
+void vectorInput(float *vetor, int size){
 	std::cout << "Entrada de valores - vetor" << std::endl;
 	for (int i = 0; i < size; i++){
 			std::cout << "informe o valor da posição " << i << std::endl;
@@ -73,14 +73,14 @@ void vectorInput(double *vetor, int size){
 	}
 }
 
-void concatenateMatrix(double **m, double *vetor, int size){
+void concatenateMatrix(float **m, float *vetor, int size){
 	for (int i = 0; i < size; i++){
 		m[i][size] = vetor[i];
 	}
 		
 }
 
-void printMatrix(double **m, int size){
+void printMatrix(float **m, int size){
 	std::cout << "\n";
 	for (int i = 0; i < size; i++){
 		for (int j = 0; j <= size; j++){
@@ -92,8 +92,8 @@ void printMatrix(double **m, int size){
 		
 }
 
-void solve(double **m, int size){
-	double f;
+void solve(float **m, int size){
+	float f;
 
 	for (int i = 1; i < size; i++){
 		for (int j = 0; j < i; j++){
@@ -103,8 +103,10 @@ void solve(double **m, int size){
 	}
 }
 
-void updateRow(double **m, int row, double factor, int size, int iteration){
+void updateRow(float **m, int row, float factor, int size, int iteration){
 	for(int i = 0; i <= size; i++){
 		m[row][i] = m[row][i] - factor * m[iteration][i];
 	}
 }
+
+void isolate(float **m, )

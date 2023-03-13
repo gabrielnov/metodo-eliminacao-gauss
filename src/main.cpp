@@ -7,8 +7,7 @@ int main(){
 	int size;
 	float **m, *vetor;
 	
-	// size = sizeInput();
-	size = 3;
+	size = sizeInput();
 
 	m = new float * [size];
 	for (int i = 0; i < size; i++)
@@ -16,23 +15,8 @@ int main(){
 	
 	vetor = new float [size];
 
-	// matrixInput(m, size);
-	// vectorInput(vetor, size);
-	vetor[0] = 1;
-	vetor[1] = 2;
-	vetor[2] = 3;
-
-	m[0][0] = 3;
-	m[0][1] = 2;
-	m[0][2] = 4;
-	
-	m[1][0] = 1;
-	m[1][1] = 1;
-	m[1][2] = 2;
-	
-	m[2][0] = 4;
-	m[2][1] = 3;
-	m[2][2] = -2;
+	matrixInput(m, size);
+	vectorInput(vetor, size);
 
 	concatenateMatrix(m, vetor, size);
 	printMatrix(m, size);

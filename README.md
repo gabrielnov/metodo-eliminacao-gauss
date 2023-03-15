@@ -23,3 +23,25 @@ Algoritmo numérico escrito em C++ que tendo como dados de entrada a ordem n da 
 1. Executar o arquivo
 
 ``` .\gauss.exe```
+
+## Exemplos
+
+### Entrada
+
+
+| x1  | x2  | x3  | x4  | b |
+| :---: | :---: | :---: | :---: | :---: |
+| 1   |  4  | -2  | 2  |  8  |
+| 2   |  3  |  1  | 3  | 8   |
+| 1   |  5  | -5  | 3  |  18 |
+| 2   |  4  | -4  | 0  | 12  |
+   
+ 
+### Saída
+
+```
+   x0 =  4.00
+   x1 = -2.00
+   x2 = -3.00
+   x3 =  3.00
+```
